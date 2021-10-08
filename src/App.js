@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import {usePokemonStore, useSettingsStore} from './store'
+import  People from './components/People'
+import  Input from './components/Input'
+import BearCounter from './components/BearCounter'
+import React, {useEffect} from "react";
+import Profile from "./components/Profile";
+import FilterInput from "./components/Pokemons/FilterInput";
+import PokemonList from './components/Pokemons/PokemonList'
+import EditPerson from './components/Person/EditPerson'
+import ShowPerson from './components/Person/ShowPerson'
 
 function App() {
+  //const people = useStore (state => state.people)
+  const toggleDarkMode = useSettingsStore((state) => state.toggleDarkMode)
+  const dark = useSettingsStore((state)=> state.dark)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <p>People</p>
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+      <Input/>
+      <People />
+      <BearCounter/>
+      <Profile/>
+      <EditPerson/>
+      <FilterInput/>
+      <PokemonList/>
+      <ShowPerson/>
+
     </div>
   );
 }
