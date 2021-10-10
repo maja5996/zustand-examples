@@ -1,5 +1,5 @@
 import React from 'react'
-import {usePersonStore} from "../../store";
+import {usePersonStore} from '../../store/usePersonStore'
 
 export default function EditPerson() {
     const firstName = usePersonStore((state) => state.firstName);

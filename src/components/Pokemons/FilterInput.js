@@ -1,5 +1,5 @@
 import React from 'react'
-import {usePokemonStore} from "../../store";
+import {usePokemonStore} from '../../store/usePokemonStore'
 
 export default function FilterInput() {
     const filter = usePokemonStore(state => state.filter)

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import {usePersonStore} from "../../store";
+
+import {usePersonStore} from '../../store/usePersonStore'
 
 export default function People() {
     const [onlyFirstName, setOnlyFirstName] = useState(false);
