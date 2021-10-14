@@ -13,6 +13,25 @@ body {
   color: white;
 }
 
+.navigation {
+  list-style-type: none;
+}
+
+.navigation > li {
+  display: inline;
+  padding: 1em;
+  margin-left: 7em;
+}
+
+.toggleButton{
+  background-color: peachpuff;
+  color: beige;
+  border: none;
+  border-radius: 50px;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

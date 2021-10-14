@@ -1,5 +1,5 @@
 import React from 'react'
-import {useProfileStore} from '../store'
+import {useProfileStore} from '../store/useProfileStore'
 
 export default function Profile() {
     const {username, setUsername} = useProfileStore()

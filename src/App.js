@@ -1,36 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import {usePokemonStore, useSettingsStore} from './store'
-import  People from './components/People'
-import  Input from './components/Input'
-import BearCounter from './components/BearCounter'
 import React, {useEffect} from "react";
-import Profile from "./components/Profile";
-import FilterInput from "./components/Pokemons/FilterInput";
-import PokemonList from './components/Pokemons/PokemonList'
-import EditPerson from './components/Person/EditPerson'
-import ShowPerson from './components/Person/ShowPerson'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import './App.css';
+import Navbar from "./components/Navbar";
+import HomePage from './pages/HomePage'
+import PeoplePage from "./pages/PeoplePage";
+import PersonPage from './pages/PersonPage'
+import BearsPage from "./pages/BearsPage";
+import PokemonsPage from "./pages/PokemonsPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
-  //const people = useStore (state => state.people)
-  const toggleDarkMode = useSettingsStore((state) => state.toggleDarkMode)
-  const dark = useSettingsStore((state)=> state.dark)
-
 
   return (
-    <div>
-    <p>People</p>
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
-      <Input/>
-      <People />
-      <BearCounter/>
-      <Profile/>
-      <EditPerson/>
-      <FilterInput/>
-      <PokemonList/>
-      <ShowPerson/>
-
-    </div>
+      <BrowserRouter>
+          <Navbar/>
+        <Switch>
+          <Route exact path="/" component={HomePage}  />
+          <Route path="/people" component={PeoplePage} />
+          <Route path="/person" component={PersonPage}/>
+          <Route path="/bears" component={BearsPage}/>
+          <Route path="/pokemons" component={PokemonsPage} />
+          <Route path="/profile" component={ProfilePage}/>
+      </Switch>
+      </BrowserRouter>
   );
 }
 

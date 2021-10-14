@@ -1,8 +1,8 @@
 import React from 'react'
-import {usePeoplesStore} from '../store'
+import {usePeopleStore} from '../store/usePeopleStore'
 
 export default function People() {
-    const people = usePeoplesStore(state => state.people)
+    const people = usePeopleStore(state => state.people)
 
     return (
         <div>
